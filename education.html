@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header, footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: underline;
+            color: black; 
+            font-size: 18px;
+        }
+
+        header nav ul li a:hover {
+            color: #f1f1f1;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.5); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            min-height: 500px;
+            color: black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+        }
+
+        th {
+            background-color: rgba(242, 209, 209, 0.8); 
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(249, 228, 228, 0.6);
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgba(253, 224, 224, 0.6);
+        }
+
+        .multimedia {
+            width: 100%;
+            height: 100px;
+            background-color: rgba(242, 209, 209, 0.5); 
+            animation: slideIn 0.8s ease-in-out;
+            text-align: center;
+            line-height: 100px;
+            color: black;
+            font-size: 24px;
+        }
+
+        .animated-text {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            animation: typing 3s steps(22) infinite, blink 0.5s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid black;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: black;
+            }
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted>
+        <source src="B1.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <h1 style="color: white;">NURAIN'S WEBPAGE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="family.html">Family</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>My Education</h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Institution</th>
+                <th>Course</th>
+            </tr>
+            <tr>
+                <td>2025</td>
+                <td>UiTM</td>
+                <td>Diploma in Information Management</td>
+            </tr>
+            <tr>
+                <td>2021</td>
+                <td>SMK Dato' Sheikh Ahmad</td>
+                <td>Literature</td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>SK King George V</td>
+                <td> - </td>
+            </tr>
+        </table>
+        <div class="multimedia">
+            <span class="animated-text">STAY TUNED FOR MORE UPDATES !</span>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: black;">&copy; 2024 All Rights Reserved. Designed by Nurain</p>
+    </footer>
+</body>
+</html>

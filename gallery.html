@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>  
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8ebe6; 
+            color: #4a2c2a; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        header {
+            background-color: #c9a8a1; 
+            text-align: center; 
+            padding: 20px;
+            border-bottom: 3px solid #a9857d;
+            position: relative;
+            z-index: 10; 
+        }
+
+        header h1 {
+            color: #ffffff; 
+            font-size: 2.5em;
+            margin: 0;
+            animation: slideIn 1s ease-out; 
+        }
+
+        nav ul {
+            list-style-type: underline;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: underline;
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            color: #f8ebe6;
+        }
+
+        main {
+            padding: 40px 20px;
+            text-align: left; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+
+        main h2 {
+            text-align: center;
+			text-decoration: underline;
+            color: #4a2c2a;
+            font-size: 1.8em;
+        }
+
+        footer {
+            background-color: #c9a8a1;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9em;
+            border-top: 3px solid #a9857d;
+        }
+
+        footer p {
+            color: #4a2c2a;
+            margin: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 40px;
+        }
+
+        .gallery .frame {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 4px solid #a9857d;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); 
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 80%;
+        }
+
+        .modal-content img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .animate {
+            animation: slideIn 1s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .modal-content img {
+                width: 200px;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content img {
+                width: 150px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<video autoplay muted loop class="background-video">
+    <source src="B1.mp4" type="video/mp4">
+</video>
+
+<header>
+    <h1 class="animate">NURAIN'S WEBPAGE</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">Biodata</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>My Gallery</h2>
+    <div class="gallery">
+        <div class="frame" onclick="openModal('F1.jpg', 'F2.jpg')">
+            <img src="family.jpg" alt="Family">
+            <div class="caption">Family</div>
+        </div>
+        <div class="frame" onclick="openModal('C1.jpg', 'C2.jpg')">
+            <img src="cat.jpg" alt="Cat">
+            <div class="caption">Cat</div>
+        </div>
+        <div class="frame" onclick="openModal('D1.jpg', 'D2.jpg')">
+            <img src="dshah.jpg" alt="D'Shah Friends">
+            <div class="caption">D'Shah Friends</div>
+        </div>
+        <div class="frame" onclick="openModal('G1.jpg', 'G2.jpg')">
+            <img src="uah.jpg" alt="UAH Friends">
+            <div class="caption">UAH Friends</div>
+        </div>
+        <div class="frame" onclick="openModal('U1.jpg', 'U2.jpg')">
+            <img src="uitm.jpg" alt="UiTM Friends">
+            <div class="caption">UiTM Friends</div>
+        </div>
+        <div class="frame" onclick="openModal('I1.jpg', 'I2.jpg')">
+            <img src="intern.jpg" alt="Internship">
+            <div class="caption">Internship</div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 All Rights Reserved. Designed by Nurain</p>
+</footer>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg1" src="" alt="">
+        <img id="modalImg2" src="" alt="">
+    </div>
+</div>
+
+<script>
+    function openModal(img1, img2) {
+        document.getElementById('modalImg1').src = img1;
+        document.getElementById('modalImg2').src = img2;
+        document.getElementById('myModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

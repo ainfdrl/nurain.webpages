@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: -1;
+        }
+
+        header, footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: underline;
+            color: black;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .experience-frame {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 20px;
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid rgba(0, 0, 0, 0.1); 
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center; 
+        }
+
+        th {
+            background-color: rgba(244, 244, 244, 0.8);
+        }
+
+        button {
+            background-color: #f2cfcf;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block; 
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #e1bcbc;
+        }
+
+        .popup-frame {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .popup-frame img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .popup-frame button {
+            background-color: #f2cfcf;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .popup-frame button:hover {
+            background-color: #e1bcbc;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+ 
+    <video class="background-video" autoplay muted loop>
+        <source src="B1.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <h1>NURAIN'S WEBPAGE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="family.html">Family</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="experience-frame">
+            <h2>My Experience</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Experience Type</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Work Experience</td>
+                        <td>Details about my part time work.</td>
+                        <td><button onclick="showPopup('workPopup')">Click More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Internship Experience</td>
+                        <td>Insights from my internship programs.</td>
+                        <td><button onclick="showPopup('internshipPopup')">Click More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Activities Involvement</td>
+                        <td>Participation in various activities.</td>
+                        <td><button onclick="showPopup('activitiesPopup')">Click More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Leadership Experience</td>
+                        <td>Roles and achievements in leadership.</td>
+                        <td><button onclick="showPopup('leadershipPopup')">Click More</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="workPopup" class="popup-frame">
+                <img src="work.jpg" alt="Work Experience">
+                <p>Experience working at Galeri Ustazah Asma' Harun over the past few months.</p>
+                <button onclick="closePopup('workPopup')">Close</button>
+            </div>
+
+            <div id="internshipPopup" class="popup-frame">
+                <img src="internship.jpg" alt="Internship Experience">
+                <p>Internships at Jabatan Hal Ehwal Agama Islam, Negeri Sembilan (JHEAINS) have provided me with valuable insights and practical experience in my field.</p>
+                <button onclick="closePopup('internshipPopup')">Close</button>
+            </div>
+
+            <div id="activitiesPopup" class="popup-frame">
+                <img src="A1.jpg" alt="Activities Involvement">
+                <p>Being involved in Program Ihtifal Ilmi and achieving 1st place in "Tilawah Al-Quran" category.</p>
+                <button onclick="closePopup('activitiesPopup')">Close</button>
+            </div>
+
+            <div id="leadershipPopup" class="popup-frame">
+                <img src="leadership.jpg" alt="Leadership Experience">
+                <p>The position held in association, such as Biro Kebajikan of Pusat Islam (IPMM).</p>
+                <button onclick="closePopup('leadershipPopup')">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="overlay" class="overlay" onclick="closePopup('workPopup'); closePopup('internshipPopup'); closePopup('activitiesPopup'); closePopup('leadershipPopup');"></div>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Designed by Nurain</p>
+    </footer>
+</body>
+</html>

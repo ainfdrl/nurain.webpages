@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header, footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: underline;
+            color: black; 
+            font-size: 18px;
+        }
+
+        header nav ul li a:hover {
+            color: #f1f1f1;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.7); 
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .container h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 45px;
+            color: #444;
+        }
+
+        .profile-container {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .caption {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .icon-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .icon-links a {
+            text-decoration: none;
+        }
+
+        .icon-links img {
+            width: 40px;
+            height: 40px;
+        }
+
+        button {
+            margin-bottom: 20px; 
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #c9a8a1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <video class="background-video" autoplay muted loop>
+        <source src="B1.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <h1>WELCOME TO MY PERSONAL WEBSITE <3</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="family.html">Family</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Nurain's Webpage</h2>
+        <div class="profile-container">
+            <img src="P1.jpg" alt="Nurain's Webpage" class="profile-pic">
+            <p class="caption">Contact Me:</p>
+            <div class="icon-links">
+                <a href="https://www.instagram.com/ainfdrl" target="_blank">
+                    <img src="ig.png" alt="Instagram">
+                </a>
+                <a href="mailto:ainfdrl2@gmail.com">
+                    <img src="email.png" alt="Email">
+                </a>
+            </div>
+        </div>
+
+        <p>This website introduces my personal details, experiences, education, family, and more!</p>
+        <p>Current time: <span id="clock"></span></p>
+        <button onclick="showAlert()">Click Me for a Greeting!</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Designed by Nurain</p>
+    </footer>
+
+</body>
+</html>
+
+

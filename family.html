@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #4a2c2a;
+        }
+
+        header {
+            background-color: #c9a8a1; 
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center; 
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: underline; 
+            color: #4a2c2a;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #f8ebe6; 
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #4a2c2a; 
+            text-decoration: underline;
+        }
+
+        .framed-section {
+            border: 3px solid #f2d1d1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.7); 
+            position: relative; 
+            z-index: 1;
+        }
+
+		.experience-frame {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 20px;
+        }
+
+        video, audio {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background-color: #c9a8a1; 
+            padding: 10px;
+            text-align: center;
+            color: #4a2c2a; 
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .custom-list {
+            list-style-type: square;
+            text-align: left;
+            margin: 0 auto;
+            display: inline-block;
+            padding-left: 20px;
+        }
+
+        .custom-list li {
+            margin: 10px 0;
+        }
+
+        .about-family-container {
+            text-align: center; 
+            margin: 0 auto;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <video class="background-video" autoplay muted loop>
+        <source src="B1.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <h1>NURAIN'S WEBPAGE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="family.html">Family</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About My Family</h2>
+        <div class="framed-section about-family-container">
+            <p>I come from a loving family of five. Here’s a bit about us:</p>
+            <ul class="custom-list">
+                <li><strong>Father:</strong> A hardworking self-employed individual who supports our family.</li>
+                <li><strong>Mother:</strong> A wonderful homemaker who keeps the family together.</li>
+                <li><strong>Siblings:</strong> My brother has finished his studies and is working, and my younger brother is still studying in secondary school.</li>
+            </ul>
+            <p>We enjoy spending quality time together, especially during holidays and festivals.</p>
+        </div>
+
+        <h3>Ayah & Ciko</h3>
+        <div class="framed-section">
+            <video controls>
+                <source src="V1.MOV" type="video/mp4">
+            </video>
+        </div>
+
+        <h3>My Nephew & Niece</h3>
+        <div class="framed-section">
+            <video controls>
+                <source src="V2.MOV" type="video/mp4">
+            </video>
+        </div>
+
+        <h3>Family Song</h3>
+        <div class="framed-section">
+            <audio controls>
+                <source src="Maher Zain - One Big Family Official Lyric Video.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved. Designed by Nurain</p>
+    </footer>
+</body>
+</html>
